@@ -8,6 +8,10 @@ TLDR: need to clone with a unique project name and rename database
 4. rename database to something unique may use new_project_name in `database.yml`
    - search for `starter-spring-21` and replace `<new_project_name>`
 5. rails db:create db:migrate db:seed
+
+   before to create
+   edit database.yml
+   
 6. cd client
 7. yarn
 
