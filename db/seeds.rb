@@ -11,37 +11,34 @@
 # Thing.create(name:Faker::Company.name )
 
 require 'faker'
-Grade.destroy_all
-Skill.destroy_all
-User.destroy_all
+Doctor.destroy_all
+Patient.destroy_all
+Appointment.destroy_all
 
-a = Skill.create(name: 'ruby', description:'Syntaz Sugar')
-b = Skill.create(name: 'rails', description:'Stay on the rails...Convention')
-c = Skill.create(name: 'react', description:'make writing UI noooice!!!')
+d1 = Doctor.create(name:'Luis Mejia', phone:'385-999-6789')
+d2 = Doctor.create(name:'Kelly Njord', phone:'379-999-3439')
+d3 = Doctor.create(name:'Alejandro Bueno', phone:'385-999-6789')
+d4 = Doctor.create(name:'Edward Zambrano', phone:'379-777-5555')
+d5 = Doctor.create(name:'Lodimiro Franzua', phone:'385-999-6789')
 
-# Skills could also be a homework with a grade
-d = Skill.create(name: 'Homework1', description:'CRUD ACTIONS!!')
-e = Skill.create(name: 'Homework2', description:'Cassino')
-
-skills =[a,b,c,d,e]
-
+doctors =[d1,d2,d3,d4,d5]
 
 5.times do |i|
- user = User.create(name: Faker::Name.name)
+ patient = Patient.create(name: Faker::Name.name)
  5.times do |i|
-  Grade.create(score: rand(100), skill_id: skills[i].id, user_id: user.id)
+  Appointment.create(time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), doctor_id: doctors[i].id, patient_id: patient.id)
  end
 end
 
-puts "SKILLZZ SIZE: #{Skill.all.length}"
-puts "USER SIZE: #{User.all.length}"
-puts "GRADE SIZE: #{Grade.all.length}"
+puts "DOCTOR SIZE: #{Doctor.all.length}"
+puts "PATIENT SIZE: #{Patient.all.length}"
+puts "APPOINTMENT SIZE: #{Appointment.all.length}"
 
 # grab users skill
-puts "FIRST USER SKILLs: #{User.first.skills}"
+puts "FIRST PATIENT DOCTORS: #{Patient.first.doctors}"
 
 # grab users firts skill grades
-puts "FIRST USER Grades: #{User.first.grades}"
+puts "FIRST PATIENT APPOINTMENT: #{Patient.first.appointments}"
 
 
 
