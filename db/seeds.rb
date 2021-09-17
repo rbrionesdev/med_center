@@ -26,7 +26,7 @@ doctors =[d1,d2,d3,d4,d5]
 5.times do |i|
  patient = Patient.create(name: Faker::Name.name)
  5.times do |i|
-  Appointment.create(time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), doctor_id: doctors[i].id, patient_id: patient.id)
+  Appointment.create(date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short), doctor_id: doctors[i].id, patient_id: patient.id)
  end
 end
 

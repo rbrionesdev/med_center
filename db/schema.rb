@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_16_005009) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string "time"
+    t.string "date"
     t.bigint "doctor_id", null: false
     t.bigint "patient_id", null: false
     t.datetime "created_at", precision: 6, null: false

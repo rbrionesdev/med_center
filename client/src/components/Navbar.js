@@ -8,16 +8,16 @@ class Navbar extends React.Component {
     return (
       <Menu>
         <Link to="/">
-          <Menu.Item active={location.pathname == "/"}>Home</Menu.Item>
+          <Menu.Item active={location.pathname === "/"}>Home</Menu.Item>
         </Link>
         <Link to="/appointments">
-          <Menu.Item active={location.pathname == "/appointments"}>Appointments</Menu.Item>
+          <Menu.Item active={location.pathname === "/appointments"}>Appointments</Menu.Item>
         </Link>
         <Link to="/doctors">
-          <Menu.Item active={location.pathname == "/doctors"}>Doctors</Menu.Item>
+          <Menu.Item active={location.pathname === "/doctors"}>Doctors</Menu.Item>
         </Link>
         <Link to="/patients">
-          <Menu.Item active={location.pathname == "/patients"}>Patients</Menu.Item>
+          <Menu.Item active={location.pathname === "/patients"}>Patients</Menu.Item>
         </Link>
       </Menu>
     );

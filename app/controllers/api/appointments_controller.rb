@@ -20,6 +20,6 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:time, :patient_id, :doctor_id)
+    params.require(:appointment).permit(:date, :patient_id, :doctor_id)
   end
 end
