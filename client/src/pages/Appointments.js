@@ -1,17 +1,18 @@
+import React from "react";
 import SemanticLoader from "../components/SemanticLoader";
-import SemanticLoadError from "../components/SemanticError";
+import SemanticLoaderError from "../components/SemanticLoaderError";
 import useAxiosOnMount from "../hooks/useAxiosOnMount";
 import { Card } from "semantic-ui-react";
 
 export default function Appointments() {
-  //{data:grades} desturcing data here and renaming it to grades
+  //{data:appointments} desturcing data here and renaming it to appointment
   const { data: appointments, loading, error } = useAxiosOnMount("/api/appointments");
 
   const renderAppointments = () => {
     if (loading) return <SemanticLoader />;
     if (error)
       return (
-        <SemanticLoadError
+        <SemanticLoaderError
           header={"Error occurred getting appointments"}
           error={error}
         />

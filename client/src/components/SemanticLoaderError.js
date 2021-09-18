@@ -1,6 +1,6 @@
 import { Message } from "semantic-ui-react";
 
-const SemanticLoadError = ({ header, error }) => {
+const SemanticLoaderError = ({ header, error }) => {
   return (
     <Message negative>
       <Message.Header>{header}</Message.Header>
@@ -8,4 +8,4 @@ const SemanticLoadError = ({ header, error }) => {
     </Message>
   );
 };
-export default SemanticLoadError;
+export default SemanticLoaderError;
