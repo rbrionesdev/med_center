@@ -14,8 +14,10 @@ export default function Doctors() {
         url="/api/doctors"
         renderData={(d) => (
           <Card onClick={() => handleClick(d.id)}>
-            <h1>{d.name}</h1>
-            <p>{d.phone}</p>
+            <Card.Content>
+              <Card.Header>Name: Dr. {d.name}</Card.Header>
+              <Card.Meta>Phone: {d.phone}</Card.Meta>
+            </Card.Content>
           </Card>
         )}
       />

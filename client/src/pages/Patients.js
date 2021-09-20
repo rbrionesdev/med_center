@@ -9,12 +9,14 @@ export default function Patients() {
   return (
     <div>
       <ListLoader 
-        header={"Doctors"}
+        header={"Patients"}
         errorMessage={""}
         url="/api/patients"
         renderData={(p) => (
           <Card onClick={() => handleClick(p.id)}>
-            <h1>{p.name}</h1>
+            <Card.Content>
+              <Card.Header>Name: {p.name}</Card.Header>
+            </Card.Content>
           </Card>
         )}
       />

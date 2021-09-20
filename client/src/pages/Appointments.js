@@ -9,6 +9,10 @@ export default function Appointments() {
   const { data: appointments, loading, error } = useAxiosOnMount("/api/appointments");
 
   const renderAppointments = () => {
+    const handleClick = (id) => {
+      console.log(id);
+    }
+
     if (loading) return <SemanticLoader />;
     if (error)
       return (
@@ -22,7 +26,7 @@ export default function Appointments() {
     }
     return appointments.map((a) => {
       return (
-          <Card key={a.id}>
+          <Card key={a.id} onClick={() => handleClick(a.id)}>
           <Card.Content>
             <Card.Header>Patient: {a.patient.name}</Card.Header>
             <Card.Meta>Date: {a.date}</Card.Meta>
